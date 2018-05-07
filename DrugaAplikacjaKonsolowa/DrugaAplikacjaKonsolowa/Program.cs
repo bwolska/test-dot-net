@@ -10,7 +10,7 @@ namespace DrugaAplikacjaKonsolowa
     {
         static void Main(string[] args)
         {
-            Console.Write("Nacisnij dowolny klawisz aby zamknac aplikacje...");
+            Console.WriteLine("Nacisnij dowolny klawisz aby zamknac aplikacje...");
             Console.ReadKey();
         }
     }
