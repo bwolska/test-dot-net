@@ -21,9 +21,9 @@ namespace Zadanie1
         }
     }
 
-    private class SayHello
+      class SayHello
     {
-        private void Say()
+         public void Say()
         {
             Console.WriteLine("Hello world");
         }
