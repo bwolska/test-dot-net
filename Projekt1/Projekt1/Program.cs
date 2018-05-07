@@ -23,7 +23,7 @@ namespace Zadanie1
 
       class SayHello
     {
-         public void Say()
+          public void Say()
         {
             Console.WriteLine("Hello world");
         }
