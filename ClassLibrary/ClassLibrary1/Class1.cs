@@ -32,6 +32,46 @@ namespace HelloWeb
             Dispose();
         }
 
+        [Fact]
+        public void Can_add_comment_to_existing_note()
+        {
+            // arrange
+
+            // wejsc na strone
+            browser.Navigate().GoToUrl(BlogUrl);
+
+            // wygeneruj tekst notatki
+            var TekstNotatki = Guid.NewGuid().ToString();
+
+            var commentslink = browser.FindElement(By.CssSelector(".comments-link > a"));
+            commentslink.Click();
+            var commentsfield = browser.FindElement(By.CssSelector("textarea#comment"));
+            commentsfield.SendKeys(TekstNotatki);
+
+            var emailfield = browser.FindElement(By.Id("email"));
+            emailfield.SendKeys(GenerateEmail());
+
+            var authorfield = browser.FindElement(By.Id("author"));
+            authorfield.SendKeys("www");
+
+            browser.FindElement(By.Id("comment-submit")).Click();
+
+
+            // assert
+
+            // sprawdzic ze sie opublikowało !!!!!!!!!!!!!
+
+            browser.FindElements(By.TagName("p"));
+
+        }
+
+
+        private string GenerateEmail()
+        {
+            var user = Guid.NewGuid().ToString();
+            return $"{user}@nonexistent.test.com";
+        }
+
         public void Dispose()
         {
             try
