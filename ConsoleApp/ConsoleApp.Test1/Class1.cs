@@ -48,7 +48,7 @@ namespace ConsoleApp.Test1
             InlineData(-5, 0, double.NegativeInfinity),
             InlineData(0, 0, double.NaN)
             ]
-        public void Dividing_2_positive_integers_parametrized(double x, double y, double expected_result)
+        public void Dividing_2_numbers_parametrized(double x, double y, double expected_result)
         {
             // arrange         
             var calc = new ExampleCalculator();
@@ -61,7 +61,7 @@ namespace ConsoleApp.Test1
         }
 
         [Fact]
-        public void Mulipliing_2_positive_integers()
+        public void Muliplying_2_positive_integers()
         {
             // arrange
             var x = 5;

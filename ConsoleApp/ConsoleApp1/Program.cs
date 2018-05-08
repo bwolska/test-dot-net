@@ -10,23 +10,46 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
+            double result;
+
             Console.WriteLine("Witamy");
 
             Console.Write("Op1: ");
-            var x = int.Parse(Console.ReadLine());
+            var x = double.Parse(Console.ReadLine());
 
             Console.Write("Op2: ");
-            var y = int.Parse(Console.ReadLine());
+            var y = double.Parse(Console.ReadLine());
 
-            Console.WriteLine("Wybierz operacje: ");
+            Console.Write("Wybierz operacje: ");
             var op = char.Parse(Console.ReadLine());
 
             var calc = new ExampleCalculator();
           
-           
+            switch (op)
+            {
+                case '+' :
+                    result = calc.Add(x, y);
+                    break;
 
-            var result = calc.Add(x, y);
+                case '-':
+                    result = calc.Subt(x, y);
+                    break;
 
+                case '*':
+                    result = calc.Mult(x, y);
+                    break;
+
+                case '/':
+                    result = calc.Div(x, y);
+                    break;
+
+                default:
+                    result = 0;
+                    break;
+
+            }
+
+            Console.Write("Wynik: ");
             Console.WriteLine(result);
 
             Console.ReadKey();
@@ -39,17 +62,17 @@ namespace ConsoleApp1
         {
         }
 
-        public int Add(int x, int y)
+        public double Add(double x, double y)
         {
             return x + y;
         }
 
-        public int Subt(int x, int y)
+        public double Subt(double x, double y)
         {
             return x - y;
         }
 
-        public int Mult(int x, int y)
+        public double Mult(double x, double y)
         {
             return x * y;
         }
