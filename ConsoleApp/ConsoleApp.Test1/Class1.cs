@@ -43,11 +43,12 @@ namespace ConsoleApp.Test1
 
         [Theory, 
             InlineData(5, 10, 0.5),
+            InlineData(1.5, 2, 0.75),
             InlineData(5, 0, double.PositiveInfinity),
             InlineData(-5, 0, double.NegativeInfinity),
             InlineData(0, 0, double.NaN)
             ]
-        public void Dividing_2_positive_integers_parametrized(int x, int y, double expected_result)
+        public void Dividing_2_positive_integers_parametrized(double x, double y, double expected_result)
         {
             // arrange         
             var calc = new ExampleCalculator();

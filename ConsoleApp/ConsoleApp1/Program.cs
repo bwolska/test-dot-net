@@ -54,7 +54,7 @@ namespace ConsoleApp1
             return x * y;
         }
 
-        public double Div(int x, int y)
+        public double Div(double x, double y)
         {
             return (double) x / y;
         }
