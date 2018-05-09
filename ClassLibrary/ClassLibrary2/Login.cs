@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using System;
+using OpenQA.Selenium;
 
 namespace ClassLibrary2
 {
@@ -11,6 +12,11 @@ namespace ClassLibrary2
         {
             _driver = driver;
             _driver.Navigate().GoToUrl(LoginPageUrl);
+        }
+
+        internal void LogMeIn(object user)
+        {
+
         }
     }
 }
