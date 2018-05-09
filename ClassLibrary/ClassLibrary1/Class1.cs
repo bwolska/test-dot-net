@@ -18,6 +18,7 @@ namespace HelloWeb
         public HelloWebTests()
         {
             browser = new ChromeDriver();
+            browser.Manage().Window.Maximize();
         }
 
         [Fact]
@@ -37,7 +38,6 @@ namespace HelloWeb
         {
             // arrange
 
-            // wejsc na strone
             browser.Navigate().GoToUrl(BlogUrl);
 
             // wygeneruj tekst notatki
@@ -56,15 +56,12 @@ namespace HelloWeb
 
             browser.FindElement(By.Id("comment-submit")).Click();
 
-
             // assert
+            var  comments = browser.FindElements(By.ClassName("comment-body"));
+            var my_comment = comments.Where(c => c.FindElement(By.CssSelector(".comment-content > p")).Text == TekstNotatki);
 
-            // sprawdzic ze sie opublikowało !!!!!!!!!!!!!
-
-            browser.FindElements(By.TagName("p"));
-
+            Assert.Single(my_comment);
         }
-
 
         private string GenerateEmail()
         {
