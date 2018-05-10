@@ -197,9 +197,13 @@ namespace ClassLibrary2
         {
             //arrange
             var LoginPage = new Login(driver);
-            LoginPage.LogMeIn(user);
+
+            var user = "autotestdotnet@gmail.com";
+            var password = "codesprinters2018";
+            LoginPage.LogMeIn(user, password);
+
+            var adminPage = new AdminPage(driver);
             
-            //usernameOrEmail
 
 
         }

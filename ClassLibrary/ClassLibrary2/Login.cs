@@ -14,9 +14,12 @@ namespace ClassLibrary2
             _driver.Navigate().GoToUrl(LoginPageUrl);
         }
 
-        internal void LogMeIn(object user)
+        internal void LogMeIn(string user, string password)
         {
-
+            var loginElement = _driver.FindElement(By.CssSelector("input#usernameOrEmail.form-text-input "));
+            loginElement.SendKeys(user + "\n");
+            var passwordElement = _driver.FindElement(By.CssSelector("input#password.form-text-input "));
+            passwordElement.SendKeys(password + "\n");
         }
     }
 }
